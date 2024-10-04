@@ -27,7 +27,7 @@ def get_db():
 async def home():
     return '''
             <h1> Home Page </h1>
-            <a href='http://localhost:5000/docs'>http://localhost:5000/docs </a>
+            <a href='http://localhost:8000/docs'>http://localhost:8000/docs </a>
             '''
 
 
@@ -75,5 +75,5 @@ async def delete_item(item_id: int, db: Session = Depends(get_db)):
     return db_item
 
 
-if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=5000)
+# if __name__ == '__main__':
+#     uvicorn.run(app, host='0.0.0.0', reload=True, port=8000)
