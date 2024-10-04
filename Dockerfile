@@ -16,7 +16,7 @@ COPY . .
 # Expose the application port
 EXPOSE 8000
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
 # for debugging
 # CMD python -Xfrozen_modules=off -m debugpy --listen 0.0.0.0:7999 --wait-for-client -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload

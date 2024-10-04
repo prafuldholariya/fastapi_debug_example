@@ -9,10 +9,10 @@ services:
       - .:/app
     ports:
       - "8000:8000"  # FastAPI app port
-      # - "7999:7999"  # debugpy port for debugging
+      - "7999:7999"  # debugpy port for debugging
     environment:
       - PYTHONUNBUFFERED=1
       - PYDEVD_DISABLE_FILE_VALIDATION=1  # Disable file validation
     command: >
-      uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+      python -Xfrozen_modules=off -m debugpy --listen 0.0.0.0:7999 --wait-for-client -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
